@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130209194949) do
+ActiveRecord::Schema.define(:version => 20130302145041) do
+
+  create_table "administrators", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "administrators", ["user_id"], :name => "index_administrators_on_user_id"
 
   create_table "blasts", :force => true do |t|
     t.integer  "owner_id"

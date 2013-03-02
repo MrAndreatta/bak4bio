@@ -1,4 +1,6 @@
 class BlastsController < ApplicationController
+  load_resource
+  authorize_resource
   before_filter :load_contents, :except => [:index]
   
   # GET /blasts

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :contents
   has_many :blasts
+  has_one :administrator
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
