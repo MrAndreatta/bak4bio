@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+   		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical">
+    
+    	<LinearLayout
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="fill_parent"
+    	    android:orientation="vertical" >
+    	    
+    	    <LinearLayout
+    	        android:layout_width="fill_parent"
+    	        android:layout_height="wrap_content"
+    	        android:orientation="horizontal" >
+
+    	      <Spinner
+    	          android:id="@+id/spinDatabase"
+    	          android:layout_width="fill_parent"
+    	          android:layout_height="wrap_content">
+    	      </Spinner>
+
+    	  </LinearLayout>
+	      
+    	  <LinearLayout
+    	      android:layout_width="fill_parent"
+    	      android:layout_height="wrap_content"
+    	      android:orientation="horizontal" >
+    	      
+    	      <EditText
+    	          android:id="@+id/etSearch"
+    	          android:layout_width="fill_parent"
+    	          android:layout_height="wrap_content"
+    	          android:layout_weight="0.1"
+    	          android:inputType="textFilter">
+
+    	          <requestFocus />
+    	      </EditText>
+
+    	      <ImageView
+    	          android:id="@+id/imgViewSearch"
+    	          android:src="@android:drawable/ic_menu_search"
+    	          android:layout_width="wrap_content"
+    	          android:layout_height="wrap_content"
+    	          android:text="@string/search_title" />
+
+    	  </LinearLayout>
+    	  
+    	  <LinearLayout
+    	      android:layout_width="fill_parent"
+    	      android:layout_height="fill_parent"
+    	      android:orientation="vertical" >
+
+    	      <ListView
+    	          android:id="@+id/listViewSearch"
+    	          android:layout_width="fill_parent"
+    	          android:layout_height="fill_parent" >
+    	      </ListView>
+
+    	  </LinearLayout>
+    	</LinearLayout>
+</LinearLayout>

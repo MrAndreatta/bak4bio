@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blast_databases_array">
+        <item>nr</item>
+        <item>refseq_rna</item>
+        <item>refseq_genomic</item>
+        <item>chromosome</item>
+        <item>est</item>
+        <item>gss</item>
+        <item>htgs</item>
+        <item>pdb</item>
+        <item>alu</item>
+        <item>dbsts</item>
+        <item>tsa_nt</item>
+        <item>alu</item>
+        <item>alu</item>
+        <item>alu</item>
+        <item>alu</item>
+    </string-array>
+</resources>

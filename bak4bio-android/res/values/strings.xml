@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">BAK4BIO</string>
+    <string name="kegg_title">KEGG</string>
+    <string name="ddjb_title">DDJB</string>
+    <string name="ncbi_title">NCBI</string>
+    <string name="ebi_title">EBI</string>
+    <string name="pdbj_title">PDBJ</string>
+    <string name="exit_title">Exit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="search_title">Search</string>
+    <string name="waiting_label">Waiting</string>
+    <string name="password_label">Password</string>
+    <string name="email_label">Email</string>
+    <string name="join_now_label">Join now</string>
+    <string name="detail_title">Detail</string>
+    <string name="login_title">Login</string>
+    <string name="list_file_title">Files</string>
+    <string name="no_records_found_body">No records found</string>
+    <string name="invalid_option_title">Invalid Option</string>
+    <string name="exit_confirmation_body">Do you really want to exit the application?</string>
+    <string name="confirmation_title">Confirmation</string>
+    <string name="blast_search_title">Blast Search</string>
+    <string name="blast_detail_title">Blast Detail</string>
+    <string name="blast_new_title">New Blast</string>
+    <string name="new_blast_job">Start a new Blast</string>
+    <string name="yes_label">Yes</string>
+    <string name="no_label">No</string>
+    <string name="need_internet_body">You need internet connection.</string>
+    
+</resources>

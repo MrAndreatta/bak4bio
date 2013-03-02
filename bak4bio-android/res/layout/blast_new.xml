@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_gravity="center_horizontal">
+
+  <TextView 
+      android:layout_height="wrap_content"
+      android:text="Title" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <EditText 
+      android:id="@+id/etTitle"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+  <TextView 
+      android:layout_height="wrap_content"
+      android:text="Sequence" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <Spinner 
+      android:id="@+id/spinEntry"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+   <TextView 
+      android:layout_height="wrap_content"
+      android:text="Program" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <Spinner 
+      android:id="@+id/spinProgram"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+   <TextView 
+      android:layout_height="wrap_content"
+      android:text="Database" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <Spinner 
+      android:id="@+id/spinDatabase"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+   <TextView 
+      android:layout_height="wrap_content"
+      android:text="Max target sequence" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <Spinner 
+      android:id="@+id/spinMaxTargetSequence"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+          
+  <TextView 
+      android:layout_height="wrap_content"
+      android:text="Expect threshold" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <EditText 
+      android:id="@+id/etExpect"
+      android:inputType="number"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+   <TextView 
+      android:layout_height="wrap_content"
+      android:text="Word size" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+    <Spinner 
+      android:id="@+id/spinWordSize"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+   <TextView 
+      android:layout_height="wrap_content"
+      android:text="Max matches range" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+  <EditText 
+      android:id="@+id/etMaxMatchesRange"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"
+      android:inputType="number"/>
+  
+  <TextView 
+      android:layout_height="wrap_content"
+      android:text="Match/Mismatch Scores" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+    <Spinner 
+      android:id="@+id/spinMScores"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+    
+    <TextView 
+      android:layout_height="wrap_content"
+      android:text="Gap Costs" 
+      android:layout_width="match_parent" 
+      android:textStyle="bold"
+      android:textColor="@android:color/white"/>
+    
+    <Spinner 
+      android:id="@+id/spinGapCosts"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent"/>
+  
+    <Button 
+      android:id="@+id/btnSubmit" 
+      android:layout_height="wrap_content" 
+      android:layout_weight="1" 
+      android:layout_width="match_parent" 
+      android:text="Submit"></Button>
+  </LinearLayout>
+</ScrollView>

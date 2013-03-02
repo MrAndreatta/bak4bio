@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:padding="10dp">
+              
+    <LinearLayout 
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:orientation="horizontal">
+      
+     <TextView 
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:editable="false"
+          android:gravity="right"
+          android:text="Title:" />   
+      
+    <TextView 
+          android:id="@+id/tvTitle"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:editable="false"
+          android:text="Title Blast 1" />    
+  </LinearLayout>
+  
+  <LinearLayout 
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:orientation="horizontal">
+      
+     <TextView 
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:editable="false"
+          android:gravity="right"
+          android:text="Start:" />   
+      
+    <TextView 
+          android:id="@+id/tvStartAt"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:editable="false"
+          android:text="12/12/2012 12:12" />    
+  </LinearLayout>  
+  
+  <LinearLayout 
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:orientation="horizontal">
+    
+     <TextView 
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:editable="false"
+          android:gravity="right"
+          android:text="Status:" /> 
+      
+    <TextView 
+          android:id="@+id/tvStatus"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:text="pending" /> 
+      
+  </LinearLayout>
+  
+  <LinearLayout 
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:orientation="horizontal">
+      
+     <TextView 
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:editable="false"
+          android:gravity="right"
+          android:text="End:" />   
+      
+    <TextView 
+          android:id="@+id/tvEndAt"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:editable="false"
+          android:text="12/12/2012 12:18" />    
+  </LinearLayout>
+  
+  <LinearLayout 
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:orientation="horizontal">
+    
+     <TextView 
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:editable="false"
+          android:gravity="right"
+          android:text="Output:" /> 
+      
+    <TextView 
+          android:id="@+id/tvOutput"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:text="Out Title Blast 1.fasta" /> 
+      
+  </LinearLayout>
+  
+</LinearLayout>

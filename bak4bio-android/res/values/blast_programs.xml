@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blast_programs_array">
+        <item>blastn</item>
+        <item>blastp</item>
+        <item>tblastn</item>
+        <item>blastx</item>
+        <item>tbalstn</item>
+    </string-array>
+</resources>
