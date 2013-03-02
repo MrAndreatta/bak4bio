@@ -7,6 +7,7 @@ class Blast < ActiveRecord::Base
                   :max_matches_range, :max_target_sequence, :output_id,
                   :owner_id, :program, :status, :start_at, :title, :word_size
                   
+  validates_presence_of :title, :owner_id, :entry_id
   validates_uniqueness_of :title, :scope => :owner_id                
                   
 end

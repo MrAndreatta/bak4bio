@@ -1,4 +1,6 @@
 class BlastsController < ApplicationController
+  before_filter :load_contents, :except => [:index]
+  
   # GET /blasts
   # GET /blasts.json
   def index
@@ -29,6 +31,7 @@ class BlastsController < ApplicationController
   # GET /blasts/new.json
   def new
     @blast = Blast.new
+    @blast.owner_id = current_user.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -87,4 +90,10 @@ class BlastsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  def load_contents
+    @contents = Content.accessible_by(current_ability)
+  end
+  
 end

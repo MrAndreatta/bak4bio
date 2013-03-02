@@ -12,9 +12,15 @@ class Content < ActiveRecord::Base
                     :url => "/:current_user/:basename.:extension",
                     :path => "#{Rails.root}/public:url" 
                     
-  validates_uniqueness_of :source_file_name
+                    
+  validates_presence_of :description, :owner_id, :source                  
+  validates_uniqueness_of :source_file_name, :if => :has_source 
+  validates_uniqueness_of :description
   
   private
+  def has_source
+    !self.source.blank?
+  end
                                         
   # interpolate in paperclip
   Paperclip.interpolates :current_user  do |attachment, style|

@@ -7,71 +7,64 @@
   </div>
 
   <div class="group">
-    <%= f.label :entry_id, t("activerecord.attributes.blast.entry_id", :default => "Fast File Id (in contents)"), :class => :label %>
-    <%= f.number_field :entry_id, :class => 'number_field' %>
-    <span class="description">Ex: 1</span>
+    <%= f.label :entry_id, t("activerecord.attributes.blast.entry_id", :default => "Entry"), :class => :label %>
+    
+    <%= f.select("entry_id", 
+                @contents.collect { |p| ["#{p.description} - #{p.source_file_name}", p.id]},
+                {}, 
+                :style => "width:250px;" ) %>
   </div>
 
-  <div class="group">
-    <%= f.label :status, t("activerecord.attributes.blast.status", :default => "Status"), :class => :label %>
-    <%= f.select("status", {"pending" => "pending", "processing" => "processing", "finalized" => "finalized"}) %>
-  </div>
-  
+  <% if f.object && f.object.output %>
   <div class="group">
     <%= f.label :output_id, t("activerecord.attributes.blast.output_id", :default => "Output (Result)"), :class => :label %>
-    <% if f.object && f.object.output %>
-      <%= link_to f.object.output.description, f.object.output.source.url %>
-    <% else %>
-      <h3>Nothing</h3>
-    <% end %>
+    <%= link_to f.object.output.description, f.object.output.source.url %>
   </div>
+  <% end %>
 
   <div class="group">
     <%= f.label :program, t("activerecord.attributes.blast.program", :default => "Program"), :class => :label %>
-    <%= f.text_field :program, :class => 'text_field' %>
-    <span class="description">Ex: tblastn </span>
+    <%= f.select(:program, {"blastn" => "blastn", "blastp" => "blastp", "tblastn" => "tblastn", "blastx" => "blastx", "tbalstn" => "tbalstn"}, {}, :style => "width:250px;")  %>
   </div>
 
   <div class="group">
     <%= f.label :database, t("activerecord.attributes.blast.database", :default => "Database"), :class => :label %>
-    <%= f.text_field :database, :class => 'text_field' %>
-    <span class="description">Ex: chromosome</span>
+    <%= f.select(:database, {"nr" => "nr", "refseq_rna" => "refseq_rna", "refseq_genomic" => "refseq_genomic", "chromosome" => "chromosome", "est" => "est", "gss" => "gss", 
+                            "htgs" => "htgs", "pdb" => "pdb", "alu" => "alu", "dbsts" => "dbsts", "tsa_nt" => "tsa_nt", "alu" => "alu"}, {}, :style => "width:250px;")  %>
   </div>
 
   <div class="group">
     <%= f.label :word_size, t("activerecord.attributes.blast.word_size", :default => "Word size"), :class => :label %>
-    <%= f.number_field :word_size, :class => 'number_field' %>
-    <span class="description">Ex: 11</span>
+    <%= f.select(:word_size, {"11" => "11", "7" => "7", "15" => "15"}, {}, :style => "width:250px;")  %>
   </div>
 
   <div class="group">
     <%= f.label :max_target_sequence, t("activerecord.attributes.blast.max_target_sequence", :default => "Max target sequence"), :class => :label %>
-    <%= f.number_field :max_target_sequence, :class => 'number_field' %>
-    <span class="description">Ex: 100</span>
+    <%= f.select(:max_target_sequence, {"10" => "10", "50" => "50", "100" => "100", "250" => "250",
+                                        "500" => "500", "1000" => "1000", "5000" => "5000",
+                                        "10000" => "10000", "20000" => "20000"}, {}, :style => "width:250px;")  %>
   </div>
 
   <div class="group">
     <%= f.label :expect, t("activerecord.attributes.blast.expect", :default => "Expect"), :class => :label %>
-    <%= f.number_field :expect, :class => 'number_field' %>
+    <%= f.text_field :expect, :class => 'text_field' %>
     <span class="description">Ex: 10</span>
   </div>
 
   <div class="group">
     <%= f.label :max_matches_range, t("activerecord.attributes.blast.max_matches_range", :default => "Max matches range"), :class => :label %>
-    <%= f.number_field :max_matches_range, :class => 'number_field' %>
+    <%= f.text_field :max_matches_range, :class => 'text_field' %>
     <span class="description">Ex: 0</span>
   </div>
 
   <div class="group">
     <%= f.label :m_scores, t("activerecord.attributes.blast.m_scores", :default => "Match/Mismatch scores"), :class => :label %>
-    <%= f.text_field :m_scores, :class => 'text_field' %>
-    <span class="description">Ex: 1,-3</span>
+    <%= f.select(:m_scores, {"1,-2" => "1,-2", "1,-3" => "1,-3", "1,-4" => "1,-4", "2,-3" => "2,-3", "4,-5" => "4,-5", "1,-1" => "1,-1"}, {}, :style => "width:250px;")  %>
   </div>
 
   <div class="group">
     <%= f.label :gap_costs, t("activerecord.attributes.blast.gap_costs", :default => "Gap costs"), :class => :label %>
-    <%= f.text_field :gap_costs, :class => 'text_field' %>
-    <span class="description">Ex: 0 0 (Linear)</span>
+    <%= f.select(:gap_costs, {"5 2" => "5 2", "2 2" => "2 2", "1 2" => "1 2", "1 2" => "0 2", "0 2" => "3 1", "3 1" => "2 1", "2 1" => "1 2", "1 1" => "1 1"}, {}, :style => "width:250px;")  %>
   </div>
 <div class="group navform wat-cf">
   <button class="button" type="submit">
