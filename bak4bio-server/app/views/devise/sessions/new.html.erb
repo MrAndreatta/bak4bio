@@ -1,0 +1,37 @@
+<div id="box">
+  <div class="block" id="block-login">
+    <h2>Sign In</h2>
+    <div class="content login">
+      <div class="flash">
+        <!-- <div class="message notice">
+          <p>Logged in successfully</p>
+        </div> -->
+      </div>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form login"}) do |f| %>
+        <div class="group wat-cf">
+          <div class="left">
+            <label class="label right"><%= f.label :email %></label>
+          </div>
+          <div class="right">
+	 		 <%= f.email_field :email, :class => "text_field" %>
+          </div>
+        </div>
+        <div class="group wat-cf">
+          <div class="left">
+            <label class="label right"><%= f.label :password %></label>
+          </div>
+          <div class="right">
+          	 <%= f.password_field :password, :class =>"text_field" %>
+          </div>
+        </div>
+        <div class="group navform wat-cf">
+          <div class="right">
+            <button class="button" type="submit">
+              <img src="<%= asset_path('web-app-theme/icons/key.png')%>" alt="Save"> Login
+            </button>
+          </div>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>

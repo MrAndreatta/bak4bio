@@ -1,0 +1,55 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", blasts_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_blast_path %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Blasts</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>
+          <th class="first">ID</th>
+          <th>
+            <%= t("activerecord.attributes.blast.title", :default => t("activerecord.labels.title", :default => "Title")) %>
+          </th>
+          <th>
+            <%= t("web-app-theme.status", :default => "Status")  %>
+          </th>
+          <th>
+            <%= t("web-app-theme.created_at", :default => "Created at")  %>
+          </th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @blasts.each do |blast| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= blast.id %>
+          </td>
+          <td>
+            <%= link_to blast.title, edit_blast_path(blast) %>
+          </td>
+          <td>
+            <%= link_to blast.status, edit_blast_path(blast) %>
+          </td>
+          <td>
+            <%= blast.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_blast_path(blast) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", blast_path(blast), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

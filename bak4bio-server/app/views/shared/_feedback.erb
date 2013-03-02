@@ -1,0 +1,30 @@
+<div class="flash">
+  <% if !messages.nil? && messages.any? %>
+    <% messages.each do |message| %>
+      <div class="message notice"
+        <p><%= message %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="flash">
+  <% if !warnings.nil? && warnings.any? %>
+    <% warnings.each do |warning| %>
+      <div class="message alert"
+        <p><%= warning %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="flash">
+  <% if !errors.nil? && errors.any? %>
+    <% errors.each do |error| %>
+      <div class="message error"
+        <p><%= error %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

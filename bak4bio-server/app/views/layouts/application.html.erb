@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BAK4BIO</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <a href="/"><img src="<%= asset_path('bak4bio.png') %>"/></a>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <li> <%= link_to current_user.name, edit_registration_path(current_user) %></li>
+          <li> <%= link_to t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path %></li>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf">
+        	<li class="<%= params[:controller] == "contents" ? "first active" : "first" %>"><%= link_to "Contents", contents_path %></li>
+        	<li class="<%= params[:controller] == "blasts" ? "first active" : "first" %>"><%= link_to "Blast Jobs", blasts_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <%= render 'shared/feedback', :messages => [flash[:notice]] ,:warnings => [flash[:alert]], :errors => current_entity_errors(controller_name) %>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> BAK4BIO.</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

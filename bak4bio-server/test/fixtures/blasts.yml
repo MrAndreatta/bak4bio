@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: 
+  program: MyString
+  database: MyString
+  word_size: 1
+  max_target_sequence: 1
+  expect: 
+  max_matches_range: 
+  m_scores: MyString
+  gap_costs: MyString
+
+two:
+  title: MyString
+  content: 
+  program: MyString
+  database: MyString
+  word_size: 1
+  max_target_sequence: 1
+  expect: 
+  max_matches_range: 
+  m_scores: MyString
+  gap_costs: MyString

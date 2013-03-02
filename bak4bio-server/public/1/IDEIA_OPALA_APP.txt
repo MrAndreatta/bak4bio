@@ -1,0 +1,43 @@
+------------------
+Aplicativo Opala
+------------------
+
+- Informações sobre os opalas
+	- Fotos do modelo
+	- Curiosidades
+	- Maiores informações
+	- Vídeos
+	- Local de fabricação
+	- Histórico
+
+- Pesquisa
+	- Via número do Chassis
+	- Ano
+	- Modelo
+	
+- Manual do proprietário em PDF para leitura
+
+- Lista de Eventos/Encontros do mês
+
+- Tabela de cores
+
+- Relação de empresas (lataria/pintura/mecanica) de referencia para os opalas
+
+- Clubes de Opala
+
+- Diferenças entre Luxo, Grand Luxo, Especial, opcionais
+
+Extra
+- Ter contato para as empresas interessas na divulgação de serviços
+- Fazer multiplataforma
+- Cobrar mensalidades das empresas na lista de referências
+- Divulgação do aplicativo em eventos 
+
+http://www.palat.com.br/cars5.htm
+
+
+
+Fonte
+http://www.opala.com/forum/viewtopic.php?f=19&t=23338
+
+	

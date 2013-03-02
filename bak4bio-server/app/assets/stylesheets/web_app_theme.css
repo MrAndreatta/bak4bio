@@ -1,0 +1,49 @@
+/* 
+ * This css will include all web-app-theme css you need
+ *
+ *= require web-app-theme/base
+ *= require web-app-theme/themes/default/style.css
+ *= require_self
+ */
+
+/* Write here your css for overriding the theme's rules */
+.pagination a, .pagination span {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 1px;
+  margin-right: 3px;
+  padding: 3px;
+  min-width: 15px;
+  text-align: center;
+  background: #dddddd;
+  background-image: url("images/button-background.png");
+  color: #111111;
+}
+.pagination a:hover {
+  border: 1px solid #818171;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.pagination span.current {
+  background: #261f1f;
+  color: white;
+  border: 5px solid #261f1f;
+}
+
+.pagination a:active {
+  background-image: url("images/button-background-active.png");
+  outline: none;
+}
+
+#header a {
+  padding: 1px 5px;
+  float: left;
+  text-transform: normal;
+  letter-spacing: px;
+}
+
+.flash .alert {
+  border: 1px solid #bb9004;
+  background: #f9c006 url("images/messages/warning.png") no-repeat 10px center; 
+}

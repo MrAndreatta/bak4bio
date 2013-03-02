@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BAK4BIO</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+  <div id="header">
+    <a href="/"><img src="<%= asset_path('bak4bio.png') %>"/></a>
+  </div>	
+  
+  <div id="wrapper" class="wat-cf">
+    <%= render 'shared/feedback', :messages => [flash[:notice]] ,:warnings => [flash[:alert]], :errors => current_entity_errors(controller_name) %>
+  </div>	
+  <div id="container">
+    <div id="box">
+      <%= yield %>
+    </div>
+  </div>
+  
+  <div id="footer">
+	</div>
+
+</body>
+</html>

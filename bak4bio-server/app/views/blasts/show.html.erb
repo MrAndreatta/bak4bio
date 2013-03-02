@@ -1,0 +1,79 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", blasts_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_blast_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", blast_path %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.blast.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
+          <%= @blast.title %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.entry_id", :default => t("activerecord.labels.entry_id", :default => "Entry")) %>:</b>
+          <%= @blast.entry_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.status", :default => t("activerecord.labels.status", :default => "Status")) %>:</b>
+          <%= @blast.status %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.output_id", :default => t("activerecord.labels.output_id", :default => "Output")) %>:</b>
+          <%= @blast.output_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.program", :default => t("activerecord.labels.program", :default => "Program")) %>:</b>
+          <%= @blast.program %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.database", :default => t("activerecord.labels.database", :default => "Database")) %>:</b>
+          <%= @blast.database %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.word_size", :default => t("activerecord.labels.word_size", :default => "Word size")) %>:</b>
+          <%= @blast.word_size %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.max_target_sequence", :default => t("activerecord.labels.max_target_sequence", :default => "Max target sequence")) %>:</b>
+          <%= @blast.max_target_sequence %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.expect", :default => t("activerecord.labels.expect", :default => "Expect")) %>:</b>
+          <%= @blast.expect %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.max_matches_range", :default => t("activerecord.labels.max_matches_range", :default => "Max matches range")) %>:</b>
+          <%= @blast.max_matches_range %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.m_scores", :default => t("activerecord.labels.m_scores", :default => "M scores")) %>:</b>
+          <%= @blast.m_scores %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.blast.gap_costs", :default => t("activerecord.labels.gap_costs", :default => "Gap costs")) %>:</b>
+          <%= @blast.gap_costs %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_blast_path(@blast), :class => "button" %>
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), blast_path(@blast), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
