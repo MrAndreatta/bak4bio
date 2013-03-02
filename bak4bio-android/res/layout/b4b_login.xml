@@ -84,6 +84,20 @@
                         android:layout_height="fill_parent"
                         android:text="Login"/>
                 </TableRow>
+                
+                 <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center" 
+                    android:paddingTop="10dp">
+
+                    <Button
+                        android:id="@+login/btnAnotherUser"
+                        android:layout_width="300dp"
+                        android:layout_height="fill_parent"
+                        android:text="Another User"/>
+                </TableRow>
             </TableLayout>
         </LinearLayout>
     </ScrollView>

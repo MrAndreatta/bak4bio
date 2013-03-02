@@ -127,10 +127,7 @@ public class BlastSearchActivity extends AgActivity implements OnClickListener, 
 	public void onItemClick(AdapterView<?> parent, View view, int position, long idList) {
 		Blast blast = (Blast) parent.getItemAtPosition(position);
 		
-		Intent intent = new Intent(this.getBaseContext(), BlastDetailActivity.class);
-		intent.putExtra("blast", blast);
-
-		this.startActivity(intent);
+		this.openDetailBlast(blast);
 	}
 
 	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -163,9 +160,13 @@ public class BlastSearchActivity extends AgActivity implements OnClickListener, 
 
 	private void openNewBlast() {
 		Intent intent = new Intent(this.getBaseContext(), BlastNewActivity.class);
+		this.startActivity(intent);
+	}
+	
+	private void openDetailBlast(Blast blast) {
+		Intent intent = new Intent(this.getBaseContext(), BlastDetailActivity.class);
+		intent.putExtra("blast", blast);
 
 		this.startActivity(intent);
-		
 	}
-
 }

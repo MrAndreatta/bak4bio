@@ -33,6 +33,7 @@
             <%= content.created_at %>
           </td>
           <td class="last">
+            <%= link_to "#{t("web-app-theme.edit", :default => "Download")}", download_content_path(content) %> |
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_content_path(content) %> |
             <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", content_path(content), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
           </td>

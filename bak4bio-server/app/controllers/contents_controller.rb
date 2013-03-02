@@ -90,4 +90,12 @@ class ContentsController < ApplicationController
       end
     end
   end
+  
+  # GET /contents/1/download
+  def download
+    @content = Content.find(params[:id])
+    
+    send_file @content.source.path, :type => @content.source_content_type, :filename => @content.source_file_name
+    
+  end
 end

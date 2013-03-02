@@ -23,6 +23,7 @@ public class B4BLoginActivity extends AgActivity implements OnClickListener {
 	private EditText etPassword;
 	
 	private Button btnLogin;
+	private Button btnAnotherUser;
 	
 	private Operations operations = new Operations(this);
 
@@ -48,11 +49,13 @@ public class B4BLoginActivity extends AgActivity implements OnClickListener {
 		this.etEmail = (EditText) findViewById(R.login.etEmail);
 		this.etPassword = (EditText) findViewById(R.login.etPassword);
 		this.btnLogin = (Button) findViewById(R.login.btnLogin);
+		this.btnAnotherUser = (Button) findViewById(R.login.btnAnotherUser);
 	}
 	
 	@Override
 	public void bindListenersControl() {
 		this.btnLogin.setOnClickListener(this);
+		this.btnAnotherUser.setOnClickListener(this);
 	}
 
 	public void onClick(View target) {
@@ -60,6 +63,12 @@ public class B4BLoginActivity extends AgActivity implements OnClickListener {
 			this.onClickLogin();
 			return;
 		}
+		
+		if (target == this.btnAnotherUser) {
+			this.onClickAnotherUser();
+			return;
+		}
+		
 	}
 	
 	private void onClickLogin() {
@@ -102,6 +111,11 @@ public class B4BLoginActivity extends AgActivity implements OnClickListener {
 				DialogUtils.showDialog(B4BLoginActivity.this, "Error", e.getMessage());
 			}
 		});
+	}
+	
+	private void onClickAnotherUser() {
+		this.etEmail.setText("");
+		this.etPassword.setText("");
 	}
 	
 	private void openBioBoxSearch() {

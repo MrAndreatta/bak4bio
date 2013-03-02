@@ -3,7 +3,11 @@ Bak4bioServer::Application.routes.draw do
 
   devise_for :users
 
-  resources :contents
+  resources :contents do
+    member do
+      get :download
+    end
+  end
   
   resources :tokens, :only => [:create, :destroy] do
     member do

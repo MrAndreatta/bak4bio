@@ -81,6 +81,10 @@ public class BlastNewActivity extends AgActivity implements OnClickListener {
 	public void defineDataComponents() {
 		this.loadSpinnersFromXMLs();
 		this.loadSpinnersFromServices();
+	}
+	
+	@Override
+	public void executeInitialAction() {
 		this.doNew();
 	}
 	
