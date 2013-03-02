@@ -50,7 +50,7 @@
                         android:layout_gravity="center"
                         android:ems="10" 
                         android:width="300dp"
-                        android:text="anderson.1.andreatta@gmail.com"/>
+                        android:text="bak4bio@gmail.com"/>
                 </TableRow>
 
                 <TableRow
@@ -67,7 +67,7 @@
                         android:layout_gravity="center"
                         android:ems="10"
                         android:password="true" 
-                        android:text="123123"
+                        android:text="%=BAK4BIO=%"
                         android:width="300dp"/>
                 </TableRow>
 
