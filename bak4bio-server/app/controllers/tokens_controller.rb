@@ -13,13 +13,13 @@ class TokensController < ApplicationController
     password = params[:password]
    
     if request.format != :json
-      render :status=>406, :json=>{:message=>"The request must be json"}
+      render :status=>406, :json=>["The request must be json"]
       return
     end
 
     if email.nil? or password.nil?
       render :status=>400,
-      :json=>{:message=>"E-mail and password is required."}
+      :json=>["E-mail and password is required."]
       return
     end
 
@@ -27,7 +27,7 @@ class TokensController < ApplicationController
 
     if @user.nil?
       logger.info("User #{email} failed signin, user cannot be found.")
-      render :status=>401, :json=>{:message=>"E-mail and/or password invalid."}
+      render :status=>401, :json=>["E-mail and/or password invalid."]
       return
     end
 
@@ -35,7 +35,7 @@ class TokensController < ApplicationController
 
     if not @user.valid_password?(password)
       logger.info("User #{email} failed signin, password is invalid")
-      render :status=>401, :json=>{:message=>"E-mail and/or password invalid."}
+      render :status=>401, :json=>["E-mail and/or password invalid."]
       return
     end
 
@@ -44,7 +44,7 @@ class TokensController < ApplicationController
       return
     end
 	
-    render :status => 500, :json => {:message=>"User problem. Try again."}
+    render :status => 500, :json => ["User problem. Try again."]
   end
 
   # DELETE /tokens.json
@@ -53,7 +53,7 @@ class TokensController < ApplicationController
 
     if @user.nil?
       logger.info("Token not found.")
-      render :status=>404, :json=>{:message=>"Invalid token."}
+      render :status=>404, :json=>["Invalid token."]
     else
       @user.reset_authentication_token!
       render :status=>200, :json=>{:token=>params[:id]}
@@ -65,7 +65,7 @@ class TokensController < ApplicationController
     @user = User.find_by_authentication_token(params[:id])
   
     if @user.nil?
-      render :status=>404, :json=>{:message=>"Invalid token."}
+      render :status=>404, :json=>["Invalid token."]
       return
     else
       render :status=>200, :json=>{:token=>params[:id]}

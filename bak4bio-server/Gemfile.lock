@@ -40,6 +40,8 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     cancan (1.6.9)
+    clean_logger (0.0.1)
+      rails
     cocaine (0.4.2)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -121,6 +123,7 @@ PLATFORMS
 
 DEPENDENCIES
   cancan
+  clean_logger
   devise
   haml
   jquery-rails

@@ -54,7 +54,7 @@ class ContentsController < ApplicationController
         format.json { render json: @content, status: :created, location: @content }
       else
         format.html { render action: "new" }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
+        format.json { render json: @content.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -70,7 +70,7 @@ class ContentsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
+        format.json { render json: @content.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -79,11 +79,15 @@ class ContentsController < ApplicationController
   # DELETE /contents/1.json
   def destroy
     @content = Content.find(params[:id])
-    @content.destroy
 
     respond_to do |format|
-      format.html { redirect_to contents_url }
-      format.json { head :no_content }
+      if @content.destroy
+         format.html { redirect_to contents_url, notice: 'Content was successfully removed.' }
+         format.json { head :no_content }
+      else  
+        format.html { redirect_to contents_url, alert: @content.errors.full_messages }
+        format.json { render json: @content.errors.full_messages, status: :unprocessable_entity }
+      end
     end
   end
 end

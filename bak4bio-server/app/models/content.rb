@@ -1,5 +1,5 @@
 class Content < ActiveRecord::Base
-  has_one :blast
+  has_many :blasts, :foreign_key => :entry_id
   belongs_to :owner, :class_name => "User", :foreign_key => :owner_id
   
   paginates_per 10
@@ -17,9 +17,18 @@ class Content < ActiveRecord::Base
   validates_uniqueness_of :source_file_name, :if => :has_source 
   validates_uniqueness_of :description
   
+  before_destroy :can_remove?
+  
   private
   def has_source
     !self.source.blank?
+  end
+  
+  def can_remove?
+    unless self.blasts.blank?
+      errors.add(:base, "Can't remove content with blast operations")
+      return false
+    end
   end
                                         
   # interpolate in paperclip

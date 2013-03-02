@@ -8,6 +8,9 @@ class Blast < ActiveRecord::Base
                   :owner_id, :program, :status, :start_at, :title, :word_size
                   
   validates_presence_of :title, :owner_id, :entry_id
-  validates_uniqueness_of :title, :scope => :owner_id                
+  validates_uniqueness_of :title, :scope => :owner_id    
+  
+  
+  #can_remove?            
                   
 end

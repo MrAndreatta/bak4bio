@@ -84,6 +84,12 @@ public class BioBoxSearchActivity extends AgActivity implements OnClickListener,
 			}
 			
 			public void done() {
+				if (bioBoxOperation.getIndexResult().size() == 0) {
+					listView.setAdapter(null);
+					DialogUtils.showDialog(BioBoxSearchActivity.this, "Info", getString(R.string.no_records_found_body));
+					return;
+				}
+				
 				BioBoxRowArrayAdapter<Content> adapter = new BioBoxRowArrayAdapter<Content>(BioBoxSearchActivity.this, bioBoxOperation.getIndexResult());
 				listView.setAdapter(adapter);
 			}

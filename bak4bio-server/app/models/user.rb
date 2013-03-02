@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
                   :remember_me, :unconfirmed_email,
                   :content_ids, :blast_ids
-  
+                  
   def self.current_user
     Thread.current[:current_user]
   end

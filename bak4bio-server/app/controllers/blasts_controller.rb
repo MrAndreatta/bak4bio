@@ -60,7 +60,7 @@ class BlastsController < ApplicationController
         format.json { render json: @blast, status: :created, location: @blast }
       else
         format.html { render action: "new" }
-        format.json { render json: @blast.errors, status: :unprocessable_entity }
+        format.json { render json: @blast.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -76,7 +76,7 @@ class BlastsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @blast.errors, status: :unprocessable_entity }
+        format.json { render json: @blast.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end

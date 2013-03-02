@@ -32,11 +32,13 @@ public class BasePostOperation {
 					return (JSONArray) json;
 				}
 			}else if (response.getStatusCode() == 401) {
-				throw new OperationException("Unauthorized");
+				throw new OperationException(this.parseErrors(response));
+			}else if (response.getStatusCode() == 422) {
+				throw new OperationException(this.parseErrors(response));
 			}else if (response.getStatusCode() == 500) {
 				throw new OperationException("Internal server error");
 			}else {
-				throw new OperationException("Code: " + response.getStatusCode());
+				throw new OperationException("Code: " + response.getStatusCode() + "\n" + this.parseErrors(response));
 			}
 		} catch (IOException e) {
 			throw new OperationException("IO Exception:" + e.getMessage());
@@ -46,7 +48,21 @@ public class BasePostOperation {
 		
 		return null;
 	}
-	
-	
 
+	private String parseErrors(Result response) throws JSONException {
+		Object json = new JSONTokener(response.getValue()).nextValue();
+		JSONArray jsonErrors = new JSONArray();
+		String message = "";
+		
+		if (json instanceof JSONObject) {
+			jsonErrors.put(json);
+		}else if (json instanceof JSONArray) {
+			jsonErrors = (JSONArray) json;
+		}
+		
+		for (int i = 0; i < jsonErrors.length(); i++) {
+			message += jsonErrors.getString(i) + "\n";
+		}
+		return message;
+	}
 }

@@ -2,7 +2,6 @@ package br.ufpr.bioinfo.bak4bio.android.control;
 
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -176,7 +175,11 @@ public class BlastNewActivity extends AgActivity implements OnClickListener {
 				blastOperations.addParam("auth_token", ApplicationManager.getInstance().getCurrentToken().getAuthToken());
 				
 				JSONObject jsonBlastParams = new JSONObject();
-				jsonBlastParams.put("entry_id", blast.getEntry().getId().toString());
+				
+				if (blast.getEntry() != null) {
+					jsonBlastParams.put("entry_id", blast.getEntry().getId().toString());
+				}
+				
 				jsonBlastParams.put("database", blast.getDataBase());
 				jsonBlastParams.put("expect", blast.getExpect());
 		        jsonBlastParams.put("gap_costs", blast.getGapCosts());
