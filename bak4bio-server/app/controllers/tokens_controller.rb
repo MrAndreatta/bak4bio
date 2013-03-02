@@ -1,5 +1,7 @@
 #encoding: utf-8
 class TokensController < ApplicationController
+  skip_load_resource :only => [:create, :destroy, :check]
+  skip_authorize_resource :only => [:create, :destroy, :check]
   skip_before_filter :verify_authenticity_token
   skip_before_filter :authenticate_user!, :only => [:create, :destroy, :check]
   

@@ -2,7 +2,7 @@ class BlastsController < ApplicationController
   # GET /blasts
   # GET /blasts.json
   def index
-    @blasts = Blast.all
+    @blasts = Blast.accessible_by(current_ability)
     
     if params[:filter] && !params[:filter].blank?
       @blasts = Blast.where("title LIKE ?", "%#{params[:filter]}%")

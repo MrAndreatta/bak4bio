@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.page params[:page]
+    @contents = Content.accessible_by(current_ability).page params[:page]
     
     if params[:filter]
       @contents = @contents.where("description LIKE ?", "%#{params[:filter]}%")

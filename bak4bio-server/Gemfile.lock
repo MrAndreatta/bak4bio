@@ -39,6 +39,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    cancan (1.6.9)
     cocaine (0.4.2)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -119,6 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   devise
   haml
   jquery-rails
