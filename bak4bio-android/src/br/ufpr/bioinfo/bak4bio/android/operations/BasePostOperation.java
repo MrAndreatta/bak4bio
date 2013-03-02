@@ -23,7 +23,7 @@ public class BasePostOperation {
 		try {
 			response = restClient.doPost(path, params);
 			
-			if (response.getStatusCode() == 201) {
+			if (response.getStatusCode() == 200 || response.getStatusCode() == 201) {
 				Object json = new JSONTokener(response.getValue()).nextValue();
 				
 				if (json instanceof JSONObject) {

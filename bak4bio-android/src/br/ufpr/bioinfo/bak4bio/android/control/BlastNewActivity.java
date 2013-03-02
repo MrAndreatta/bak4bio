@@ -2,6 +2,7 @@ package br.ufpr.bioinfo.bak4bio.android.control;
 
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import br.com.agivis.framework.app.AgActivity;
 import br.com.agivis.framework.async.AsyncOperation;
+import br.com.agivis.framework.utils.ActivityUtils;
 import br.com.agivis.framework.utils.ConnectionUtils;
 import br.com.agivis.framework.utils.DialogUtils;
 import br.ufpr.bioinfo.bak4bio.android.R;
@@ -191,6 +193,8 @@ public class BlastNewActivity extends AgActivity implements OnClickListener {
 			
 			public void done() {
 				DialogUtils.showToast(BlastNewActivity.this, "New blast sent successfully");
+				ActivityUtils.startActivity(BlastNewActivity.this, BlastSearchActivity.class);
+				finish();
 			}
 			
 			public void failed(Exception e) {
