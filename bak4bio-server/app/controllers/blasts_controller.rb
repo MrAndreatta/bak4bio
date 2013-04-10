@@ -11,6 +11,10 @@ class BlastsController < ApplicationController
     if params[:filter] && !params[:filter].blank?
       @blasts = Blast.where("title LIKE ?", "%#{params[:filter]}%")
     end
+    
+    if params[:status] && !params[:status].blank?
+      @blasts = Blast.where(:status => params[:status])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
