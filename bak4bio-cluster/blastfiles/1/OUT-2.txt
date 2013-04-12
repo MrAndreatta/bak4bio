@@ -1,0 +1,36 @@
+BLASTN 2.2.20 [Feb-08-2009]
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+Query= gi|108881136|gb|EAT45361.1| AAEL003389-PA [Aedes aegypti]
+         (193 letters)
+
+Database: month.nt 
+           7,190,638 sequences; 3,554,823,254 total letters
+
+
+
+ ***** No hits found ******
+
+  Database: month.nt
+    Posted date:  Apr 8, 2013  4:08 PM
+  Number of letters in database: 888,706,244
+  Number of sequences in database:  1,797,934
+  
+  Database: /root/bio/ncbi/db/month.nt.001
+    Posted date:  Apr 8, 2013  4:09 PM
+  Number of letters in database: 888,704,902
+  Number of sequences in database:  1,797,878
+  
+  Database: /root/bio/ncbi/db/month.nt.002
+    Posted date:  Apr 8, 2013  4:09 PM
+  Number of letters in database: 888,707,021
+  Number of sequences in database:  1,794,771
+  
+  Database: /root/bio/ncbi/db/month.nt.003
+    Posted date:  Apr 8, 2013  4:09 PM
+  Number of letters in database: 888,705,087
+  Number of sequences in database:  1,800,055
+  
