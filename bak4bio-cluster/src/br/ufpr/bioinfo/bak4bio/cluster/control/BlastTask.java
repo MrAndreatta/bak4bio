@@ -98,8 +98,8 @@ class BlastTask implements Runnable {
 				String created_at = df.format(dataAgora);
 				String source_file_name = NomeDoArquivo;
 				
-				//TODO Aqui vc deve apontar para o arquivo gerado pelo BLAST!
-				File arquivoGeradoPeloBlast = new File("CAMINHO DO ARQUIVO!");
+				//Aqui aponta para o arquivo gerado pelo BLAST no cluster
+				File arquivoGeradoPeloBlast = new File(output_file);
 				
 				String ARQUIVO = Base64.encode(FileUtils.readFileToByteArray(arquivoGeradoPeloBlast));
 				String CONTENTTYPE = "";

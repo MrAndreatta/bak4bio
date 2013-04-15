@@ -179,7 +179,7 @@ public class B4BClusterManager {
 				}catch(Exception e){
 					System.out.println("Erro Runtime Exec: " + e.getMessage());
 				}finally{
-					//FIXME WTF??? Pra que isso aqui rapaz?
+					//FIXME Ao criar a pasta, espera um segundo, pois senão o próximo comando, ao tentar acessar a pasta, dá erro dizendo que a pasta não existe
 					try {
 						Thread.sleep(1000);
 					} catch(Exception e) {
@@ -198,7 +198,7 @@ public class B4BClusterManager {
 		        } catch (Exception e) {  
 		        	System.out.println("Erro File Exception: " + e.toString());
 		        }finally{
-		        	//FIXME WTF??? Pra que isso aqui rapaz?
+		        	//FIXME Ao criar o arquivo, espera um segundo, pois senão o comando que vai acessar o arquivo dá erro dizendo que o arquivo não existe
 					try {
 						Thread.sleep(1000);
 					} catch(Exception e) {
